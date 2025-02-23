@@ -35,7 +35,7 @@ class Report:
     @staticmethod
     def generate_stock_report():
         """Generates a stock report showing low-stock products."""
-        with open("data/tv_products.json", "r") as file:
+        with open("data/products.json", "r") as file:
             products = json.load(file)
 
         low_stock_products = {
