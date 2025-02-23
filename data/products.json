@@ -1,0 +1,14 @@
+{
+    "TV005": {
+        "product_id": "TV005",
+        "name": "Samsung QLED 55",
+        "brand": "Samsung",
+        "price": 1299.99,
+        "stock": 15,
+        "threshold": 5,
+        "discontinued": false,
+        "image_url": "images/samsung_qled_55.jpg",
+        "resolution": "4K",
+        "panel_type": "QLED"
+    }
+}
