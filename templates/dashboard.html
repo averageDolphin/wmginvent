@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="dashboard-container">
+    <h2 class="fw-bold mb-4">Dashboard</h2>
+
+    <!-- Stats Cards -->
+    <div class="row g-4">
+        <div class="col-md-3">
+            <div class="card stat-card">
+                <div class="card-body">
+                    <h5 class="card-title">Total Products</h5>
+                    <p class="card-number" id="total-products">0</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card stat-card">
+                <div class="card-body">
+                    <h5 class="card-title">Low Stock</h5>
+                    <p class="card-number text-danger" id="low-stock">0</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card stat-card">
+                <div class="card-body">
+                    <h5 class="card-title">Total Orders</h5>
+                    <p class="card-number" id="total-orders">0</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card stat-card">
+                <div class="card-body">
+                    <h5 class="card-title">Total Revenue</h5>
+                    <p class="card-number text-success" id="total-revenue">$0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sales Chart -->
+    <div class="chart-container">
+        <h4 class="fw-bold mt-4">Sales Overview</h4>
+        <canvas id="salesChart"></canvas>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="recent-activity">
+        <h4 class="fw-bold mt-4">Recent Orders</h4>
+        <table class="table mt-3">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Date</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="recent-orders"></tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

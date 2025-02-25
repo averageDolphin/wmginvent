@@ -1,0 +1,214 @@
+/* Sidebar Styling */
+.sidebar {
+    width: 260px;
+    background-color: white;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar Logo */
+.sidebar-logo {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+}
+
+/* Sidebar Container */
+.sidebar-container {
+    background-color: #F7F2FA;
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+/* Sidebar section headers */
+.sidebar h6 {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #6c757d;
+    padding-left: 10px;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+/* Sidebar Navigation Items */
+.nav-pills .nav-link {
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 12px;
+    transition: all 0.3s ease;
+    color: black;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+/* Active Link */
+.nav-pills .nav-link.active {
+    background-color: rgba(102, 51, 153, 0.15);
+    font-weight: bold;
+}
+
+/* Hover effect */
+.nav-pills .nav-link:hover {
+    background-color: rgba(102, 51, 153, 0.1);
+    color: black;
+}
+
+/* Spacing for icons */
+.nav-pills .nav-link i {
+    margin-right: 8px;
+}
+
+/* User file Section */
+.user-profile {
+    margin-top: auto;
+    padding: 10px;
+    background-color: #F1EEF7;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user-profile h6 {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.user-profile p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: gray;
+}
+
+
+
+/* Main Content */
+.main-content {
+    margin-left: 260px;
+    padding: 20px;
+    width: calc(100% - 260px);
+}
+
+/* Table Styling */
+.table {
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.table th {
+    background-color: #F7F2FA; /* Light grey for headers */
+    font-weight: bold;
+    padding: 12px;
+}
+
+.table td {
+    padding: 10px;
+}
+
+/* Row Hover Effect */
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Delete Button */
+.btn-delete {
+    background-color: #dc3545;
+    border: none;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn-delete:hover {
+    background-color: #b02a37;
+}
+
+/*=========================*/
+
+/* Dashboard Layout */
+.dashboard-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Stats Cards */
+.stat-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card .card-number {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.chart-container {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+
+#salesChart {
+    max-width: 100%;
+    max-height: 300px;
+}
+
+
+/* Recent Orders */
+.recent-activity {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/*===========================*/
+
+/* Ensure product page content aligns properly */
+.product-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Fix table width inside the product page */
+.table-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    overflow-x: auto; /* Prevents table from breaking layout */
+}
+
+/* Align Add Product button */
+.add-product-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
