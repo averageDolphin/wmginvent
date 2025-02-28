@@ -37,6 +37,26 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+function searchProducts() {
+    let input = document.getElementById("searchBar").value.toLowerCase();
+    let table = document.getElementById("product-list");
+    let rows = table.getElementsByTagName("tr");
+
+    for (let i = 0; i < rows.length; i++) {
+        let cells = rows[i].getElementsByTagName("td");
+        let match = false;
+
+        for (let j = 0; j < cells.length; j++) {
+            if (cells[j].textContent.toLowerCase().includes(input)) {
+                match = true;
+                break;
+            }
+        }
+
+        rows[i].style.display = match ? "" : "none";
+    }
+}
+
 function fetchProducts() {
     fetch("/api/products")
         .then(response => response.json())
@@ -85,7 +105,7 @@ function addProduct() {
         if (data.message) {
             fetchProducts();
             document.getElementById("add-product-form").reset();
-            document.querySelector("#addProductModal .btn-close").click(); // Close modal after submission
+            document.querySelector("#addProductModal .btn-close").click();
         } else {
             alert(data.error);
         }

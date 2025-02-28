@@ -4,6 +4,9 @@
 <div class="product-container">
     <div class="d-flex justify-content-between align-items-center">
         <h2 class="fw-bold">Product Inventory</h2>
+        <div class="search-bar">
+            <input type="text" id="searchBar" class="form-control" placeholder="Search for products..." onkeyup="searchProducts()">
+        </div>
         <div class="add-product-btn">
             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProductModal">Add Product</button>
         </div>
