@@ -64,4 +64,43 @@
         </div>
     </div>
 </div>
+
+<!-- Edit Product Modal -->
+<div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editProductLabel">Edit Product</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="edit-product-form">
+                    <input type="hidden" id="edit-product-id">
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Product Name</label>
+                        <input type="text" class="form-control" id="edit-product-name" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Brand</label>
+                        <input type="text" class="form-control" id="edit-product-brand" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Price</label>
+                        <input type="number" class="form-control" id="edit-product-price" step="0.01" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Stock Quantity</label>
+                        <input type="number" class="form-control" id="edit-product-stock" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Update Product</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

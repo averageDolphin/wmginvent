@@ -43,24 +43,30 @@ def create_order():
         return jsonify({"error": "Something went wrong", "details": str(e)}), 500
 
 
-@order_routes.route("/api/orders/<order_id>", methods=["PUT"])
+@order_routes.route("/api/orders/<order_id>/update", methods=["PUT"])
 def update_order(order_id):
-    """Update an existing order (e.g., change status)."""
-    updates = request.json
+    """Update order status"""
+    data = request.get_json()
+    orders = Order.load_orders()
 
-    updated_order = Order.update_order(order_id, updates)
-    if not updated_order:
+    if order_id not in orders:
         return jsonify({"error": "Order not found"}), 404
 
-    return jsonify({"message": "Order updated successfully", "order": updated_order})
+    if "status" in data:
+        orders[order_id]["status"] = data["status"]
+
+    Order.save_orders(orders)
+    return jsonify({"message": "Order updated successfully"})
 
 
-@order_routes.route("/api/orders/<order_id>", methods=["DELETE"])
+@order_routes.route("/api/orders/<order_id>/delete", methods=["DELETE"])
 def delete_order(order_id):
-    """Delete an order."""
-    success = Order.delete_order(order_id)
+    """Delete an order"""
+    orders = Order.load_orders()
 
-    if not success:
+    if order_id not in orders:
         return jsonify({"error": "Order not found"}), 404
 
+    del orders[order_id]
+    Order.save_orders(orders)
     return jsonify({"message": "Order deleted successfully"})

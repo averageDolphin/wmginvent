@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="orders-container">
+    <div class="d-flex justify-content-between align-items-center">
+        <h2 class="fw-bold">Orders</h2>
+    </div>
+
+    <div class="table-container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Date</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="order-list">
+                <tr><td colspan="6" class="text-center">Loading...</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!-- Edit Order Status Modal -->
+<div class="modal fade" id="editOrderModal" tabindex="-1" aria-labelledby="editOrderLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editOrderLabel">Update Order Status</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="edit-order-form">
+                    <input type="hidden" id="edit-order-id">
+                    <div class="mb-3">
+                        <label class="form-label">Order Status</label>
+                        <select class="form-control" id="edit-order-status">
+                            <option value="pending">Pending</option>
+                            <option value="shipped">Shipped</option>
+                            <option value="completed">Completed</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
