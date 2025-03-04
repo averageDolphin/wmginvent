@@ -26,7 +26,7 @@ def add_tv():
             return jsonify({"error": f"Missing field: {field}"}), 400
 
     try:
-        product = TVProduct.create_tv(data)  # Uses the updated TVProduct class
+        product = TVProduct.create_tv(data)
         return jsonify({"message": "TV Product added successfully", "product": product}), 201
     except ValueError as e:
         return jsonify({"error": str(e)}), 400

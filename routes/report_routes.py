@@ -24,13 +24,13 @@ def get_stock_report():
 ORDERS_FOLDER = "data/orders"
 PRODUCTS_FILE = "data/products.json"
 
+
 @report_routes.route("/api/reports/sales", methods=["GET"])
 def sales_report():
     """Generate sales report"""
     if not os.path.exists(ORDERS_FOLDER):
         return jsonify({"error": "No orders found"}), 404
 
-    # Load product prices
     products = {}
     if os.path.exists(PRODUCTS_FILE):
         with open(PRODUCTS_FILE, "r") as file:
@@ -45,7 +45,7 @@ def sales_report():
             try:
                 with open(filepath, "r") as file:
                     order = json.load(file)
-                    total_orders += 1  # Count orders
+                    total_orders += 1
 
                     for item in order["items"]:
                         product_id = item.get("product_id")
@@ -53,7 +53,8 @@ def sales_report():
                         price = products.get(product_id, {}).get("price", 0)
 
                         if product_id not in sales:
-                            sales[product_id] = {"units_sold": 0, "total_revenue": 0}
+                            sales[product_id] = {
+                                "units_sold": 0, "total_revenue": 0}
 
                         sales[product_id]["units_sold"] += quantity
                         sales[product_id]["total_revenue"] += price * quantity
@@ -62,6 +63,7 @@ def sales_report():
                 print(f"Skipping invalid JSON file: {filename}")
 
     return jsonify({"product_sales": sales, "total_orders": total_orders})
+
 
 @report_routes.route("/api/reports/stock", methods=["GET"])
 def stock_report():

@@ -27,7 +27,6 @@ def create_order():
     data = request.json
     required_fields = ["customer_name", "email", "items"]
 
-    # Validate required fields
     for field in required_fields:
         if field not in data:
             return jsonify({"error": f"Missing field: {field}"}), 400
@@ -37,7 +36,6 @@ def create_order():
             data["customer_name"], data["email"], data["items"])
         return jsonify({"message": "Order created successfully", "order": order}), 201
     except ValueError as e:
-        # Return validation error messages
         return jsonify({"error": str(e)}), 400
     except Exception as e:
         return jsonify({"error": "Something went wrong", "details": str(e)}), 500

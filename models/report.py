@@ -19,7 +19,6 @@ class Report:
                 for item in order["items"]:
                     product_id = item["product_id"]
                     quantity = item["quantity"]
-                    # Assume price is stored in each order item
                     price = item.get("price", 0)
 
                     total_revenue += price * quantity

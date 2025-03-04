@@ -3,12 +3,12 @@ async function calculateTotalPrice(orderItems) {
     let total = 0;
 
     try {
-        let response = await fetch("/api/products"); // Fetch product prices directly
+        let response = await fetch("/api/products");
         let products = await response.json();
         orderItems.forEach(item => {
-            let product = products[item.product_id]; // Look up product
+            let product = products[item.product_id];
             if (product) {
-                total += product.price * (item.quantity || 1); // Multiply price by quantity
+                total += product.price * (item.quantity || 1);
             }
         });
 
@@ -243,7 +243,7 @@ function renderSalesChart(salesData) {
         },
         options: {
             responsive: true,
-            maintainAspectRatio: false, /* Allow better scaling */
+            maintainAspectRatio: false,
             scales: {
                 y: {
                     beginAtZero: true
@@ -280,7 +280,7 @@ function fetchOrders() {
             let orderTable = document.getElementById("order-list");
             orderTable.innerHTML = "";
 
-            console.log("Orders API Response:", data); // Debugging
+            console.log("Orders API Response:", data);
 
             if (!data || Object.keys(data).length === 0) {
                 orderTable.innerHTML = `<tr><td colspan="6" class="text-center">No orders found</td></tr>`;
@@ -293,12 +293,6 @@ function fetchOrders() {
                 let orderDate = new Date(orderId.slice(3) * 1000);
                 orderDate = orderDate.toLocaleString();
 
-                // let total = 0;
-                // if (order.items && Array.isArray(order.items) && order.items.length > 0) {
-                //     total = order.items.reduce((sum, item) => {
-                //         return sum + ((item.price || 0) * (item.quantity || 1));
-                //     }, 0);
-                // }
                 let totalPrice = (await calculateTotalPrice(order.items)).toFixed(2);
                 console.log(totalPrice);
 

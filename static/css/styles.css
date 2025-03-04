@@ -191,23 +191,20 @@
 
 /*===========================*/
 
-/* Ensure product page content aligns properly */
 .product-container {
     max-width: 1200px;
     margin: auto;
 }
 
-/* Fix table width inside the product page */
 .table-container {
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
-    overflow-x: auto; /* Prevents table from breaking layout */
+    overflow-x: auto;
 }
 
-/* Align Add Product button */
 .add-product-btn {
     display: flex;
     justify-content: flex-end;

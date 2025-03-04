@@ -10,8 +10,10 @@ class Order:
         self.order_id = order_id
         self.customer_name = customer_name
         self.email = email
-        self.items = items  # List of purchased items
+        self.items = items
+        """List of purchased items"""
         self.status = status  # "pending", "shipped", "completed"
+        """"pending", "shipped", "completed\""""
 
     def to_dict(self):
         """Convert order object to dictionary."""
@@ -77,12 +79,10 @@ class Order:
         for item in items:
             product_id = item["product_id"]
             quantity = item["quantity"]
-            products[product_id]["stock"] -= quantity  # Reduce stock
+            products[product_id]["stock"] -= quantity
 
-        # Save updated stock levels
         Product.save_products(products)
 
-        # Create and save the order
         order_id = f"ORD{int(time.time())}"
         new_order = Order(order_id, customer_name, email, items)
 
@@ -112,7 +112,7 @@ class Order:
         except FileNotFoundError:
             return None
 
-        order.update(updates)  # Merge updates
+        order.update(updates)
         Order.save_order(order_id, order)
         return order
 
