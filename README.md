@@ -1,11 +1,11 @@
 # WMGInvent Inventory Management System
 
-WMGInvent is a web-based inventory management system built using Python and Flask. It offers a simple, intuitive interface for authorised users to manage TV products, track inventory levels, view order history, and generate basic reports.
+WMGInvent is a web-based inventory management system built using Python and Flask. It offers a simple, intuitive interface for authorised users to manage fridge products, track inventory levels, view order history, and generate basic reports.
 
 ## Features
 
 - **User Authentication:** Secure login/logout using Flask-Login.
-- **Product Management:** Add, edit, delete, and view TV product details.
+- **Product Management:** Add, edit, delete, and view Fridge product details.
 - **Dynamic Search:** Real-time search for quick product lookup.
 - **Dashboard:** Displays inventory statistics and sales overview.
 - **Reporting:** Basic reporting of stock levels and sales trends.

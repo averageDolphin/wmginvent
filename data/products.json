@@ -4,11 +4,21 @@
         "name": "Samsung QLED 55",
         "brand": "Samsung",
         "price": 1299.99,
-        "stock": 12,
+        "stock": 10,
         "threshold": 5,
         "discontinued": false,
         "image_url": "images/samsung_qled_55.jpg",
         "resolution": "4K",
         "panel_type": "QLED"
+    },
+    "Fridge001": {
+        "product_id": "Fridge001",
+        "name": "Fridge",
+        "brand": "LG",
+        "price": 1500,
+        "stock": 10,
+        "threshold": 5,
+        "discontinued": false,
+        "image_url": "images/default.jpg"
     }
 }
