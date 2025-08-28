@@ -1,24 +1,26 @@
 {
-    "TV005": {
-        "product_id": "TV005",
-        "name": "Samsung QLED 55",
-        "brand": "Samsung",
-        "price": 1299.99,
-        "stock": 10,
-        "threshold": 5,
-        "discontinued": false,
-        "image_url": "images/samsung_qled_55.jpg",
-        "resolution": "4K",
-        "panel_type": "QLED"
-    },
     "Fridge001": {
         "product_id": "Fridge001",
-        "name": "Fridge",
-        "brand": "LG",
-        "price": 1500,
-        "stock": 10,
+        "name": "Samsung American style fridge",
+        "brand": "Samsung",
+        "price": 1299.99,
+        "stock": 8,
         "threshold": 5,
         "discontinued": false,
-        "image_url": "images/default.jpg"
+        "image_url": "images/fridge001.jpg",
+        "capacity_l": 114,
+        "energy_rating": "E"
+    },
+    "Fridge002": {
+        "product_id": "Fridge002",
+        "name": "LG Generic Fridge",
+        "brand": "LG",
+        "price": 699.99,
+        "stock": 9,
+        "threshold": 5,
+        "discontinued": false,
+        "image_url": "images/fridge002.jpg",
+        "capacity_l": 80,
+        "energy_rating": "D"
     }
 }
